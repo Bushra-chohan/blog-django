@@ -1,13 +1,10 @@
-# Ignore Python and Django stuff
-*.pyc
 __pycache__/
-db.sqlite3
-.env
-
-# Ignore virtual environment
-venv/
+*.pyc
+*.pyo
+*.pyd
 env/
-
-# Ignore IDE/editor settings
-.vscode/
-.idea/
+venv/
+db.sqlite3
+static/
+media/
+.DS_Store
