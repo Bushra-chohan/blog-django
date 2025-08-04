@@ -1,0 +1,14 @@
+<!-- Inside <div class="container py-4"> -->
+{% extends "base.html" %}
+{% block content %}
+
+<h2>{{blog.title}}</h2>
+<p class="text-muted">by {{user.username}} | July 30, 2025</p>
+<hr>
+<p>{{blog.content}}</p>
+
+<a href="{% url 'edit_form' blog.id %}" class="btn btn-warning">Edit</a>
+<a href="{% url 'delete_post' blog.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'home' %}" class="btn btn-secondary ">Back</a>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+<!-- Copy/paste below inside <div class="container py-4"> in base.html -->
+
+{% extends "base.html" %}
+{% block content %}
+
+<div class="d-flex justify-content-between mb-3">
+  <h1>All Posts</h1>
+  <a href="{% url 'post_form' %}" class="btn btn-primary mx-2">+ New Post</a>
+</div>
+
+<!-- Example post cards -->
+{% for blog in blogs %}
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ blog.title }}</h5>
+      <p class="card-text">{{ blog.content }}</p>
+      <a href="{% url 'post_detail' blog.id %}" class="btn btn-outline-primary">Read More</a>
+      <a href="{% url 'delete_post' blog.id %}">
+        <i class="bi bi-trash fs-4 px-3 text-danger"></i>
+      </a>
+    </div>
+  </div>
+{% empty %}
+  <p class="fs-4 py-3">No posts yet. Create one!</p>
+{% endfor %}
+
+
+</div>
+
+{% endblock %}
+
